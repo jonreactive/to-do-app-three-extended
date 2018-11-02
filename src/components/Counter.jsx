@@ -11,11 +11,17 @@ class Counter extends Component {
     return count === 0 ? "Zero" : count;
   }
 
+  getBadgeColors() {
+    let badgeColor = "badge m-2 badge-";
+    badgeColor += this.state.count === 0 ? "warning" : "success";
+    return badgeColor;
+  }
+
   render() {
     return (
       <div>
         <span>
-          <Badge color="danger">{this.formatCount()}</Badge>
+          <Badge className={this.getBadgeColors()}>{this.formatCount()}</Badge>
         </span>
         <Button>Increment +</Button>
       </div>
