@@ -4,7 +4,7 @@ import { Badge, Button } from "reactstrap";
 class Counter extends Component {
   state = {
     count: 1,
-    tags: ["tag1","tag2","tag3","tag4"]
+    tags: []
   };
 
   formatCount() {
@@ -18,6 +18,12 @@ class Counter extends Component {
     return badgeColor;
   }
 
+  renderList() {
+    if(this.state.tags.length === 0) return <p>"insert some stuff bro"</p>
+
+    return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+  }
+
   render() {
     return (
       <div>
@@ -25,7 +31,8 @@ class Counter extends Component {
           <Badge className={this.getBadgeColors()}>{this.formatCount()}</Badge>
         </span>
         <Button>Increment +</Button>
-        <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+        <ul>{this.renderList()}</ul>
+
 
       </div>
     );
