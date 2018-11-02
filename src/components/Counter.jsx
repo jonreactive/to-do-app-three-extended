@@ -12,9 +12,6 @@ class Counter extends Component {
   }
 
   render() {
-    // let badgeColor = "danger" || "primary";
-    // badgeColor += this.state.count === 0 ? "danger" : "primary";
-
     return (
       <div>
         <span>
