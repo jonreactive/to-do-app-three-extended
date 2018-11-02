@@ -3,7 +3,8 @@ import { Badge, Button } from "reactstrap";
 
 class Counter extends Component {
   state = {
-    count: 1
+    count: 1,
+    tags: ["tag1","tag2","tag3","tag4"]
   };
 
   formatCount() {
@@ -24,6 +25,8 @@ class Counter extends Component {
           <Badge className={this.getBadgeColors()}>{this.formatCount()}</Badge>
         </span>
         <Button>Increment +</Button>
+        <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+
       </div>
     );
   }
