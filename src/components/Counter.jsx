@@ -7,7 +7,7 @@ class Counter extends Component {
     super(props)
 
     this.state = {
-      count: 1,
+      count: this.props.value,
       tags: []
     };
 
