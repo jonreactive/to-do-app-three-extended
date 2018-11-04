@@ -53,7 +53,12 @@ class Counter extends Component {
         </span>
         <Button onClick={this.handleIncrement}>Increment +</Button>
         <Button onClick={this.handleDecrement}>Decrement +</Button>
+        <Button
+        color="danger"
+        size="sm"
+        >Delete Me</Button>
         <ul>{this.renderList()}</ul>
+
 
 
       </div>
